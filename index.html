@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css">
-    <title>Document</title>
+    <title>Hangman</title>
 </head>
 <body>
-    
+    <h1 class = "heading">
+        <img class = "logo" src="assets/images/hangman-game.png" alt="logo"> Hangman
+    </h1>
+    <p>Find the hidden word - Input a letter</p>
+    <div class="game-container">
+    <div class="score-area">
+        <p class="scores">Found words: <span id="score">0</span></p>
+        <p class="scores">Not found words: <span id="incorrect">0</span></p>
+    </div>
+    <div class="wrong-letter-container">
+        <div id="wrong-letters"></div>
+        <div class="word" id="word"></div>
+    </div>
+<!-- Container for final message -->
+<div class="popup-container" id="popup-container">
+    <div class="popup">
+            <h2 id="final-message"></h2>
+            <button id="play-button">Play Again</button>
+    </div>
+</div>
+
+<!-- Notification -->
+<div class="notification-container" id="notification-container">
+    <p>You have already entered this letter</p>
+</div>
 
     <script src="assets/JS/script.js"></script>
 </body>
