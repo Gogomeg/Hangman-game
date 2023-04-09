@@ -16,9 +16,11 @@ body{
     overflow: hidden;
 }
 
-h1{
+body h1{
     margin: 20px 0 0;
+    font-size: large;
 }
+
 .game-container{
     padding: 20px 30px;
     position: relative;
