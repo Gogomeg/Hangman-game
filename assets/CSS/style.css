@@ -19,6 +19,10 @@ h1{
     margin: 20px 0 0;
 }
 
+.score-area p{
+    color: rgb(230, 213, 191);
+}
+
 .game-container{
     padding: 20px 30px;
     position: relative;
@@ -87,7 +91,7 @@ h1{
 }
 
 .popup{
-    background-color: #66879b;
+    background-color: #916592;
     border-radius: 5px;
     box-shadow: 0 15px 10px 3px rgba(0,0,0,0.1);
     padding: 20px;
@@ -122,7 +126,7 @@ h1{
 }
 
 .notification-container p{
-    color: rgb(53, 39, 180);
+    color: rgb(90, 84, 139);
     margin: 0;
 }
 
