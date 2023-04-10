@@ -1,9 +1,10 @@
 const wordE1 = document.getElementById('word');
 const wrongLettersE1 = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
-const popup = document.getElementById('pupup-container');
+const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
-const finalmessage = document.getElementById('final-message');
+const finalMessage = document.getElementById('final-message');
+const figureParts= document.querySelectorAll(".figure-part");
 const words = ['aberrant', 'assiduous', 'restaurateur', 'corroborate', 'curriculum', 'defamation', 'deprivation', 'dissociate', 'espionage', 'exaggeration', 'diurnal', 'distinction', 'programming', 'practical', 'software', 'development', 'modernism', 'situationist', 'syndrome', 'jawbreaker'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
@@ -12,11 +13,9 @@ const correctLetters = [];
 const wrongLetters = [];
 
 const foundWords = [];
-const notfoundWords = [];
-
+const notfoundWords = []
 
 //Show hidden word
-
 function displayWord(){
     wordE1.innerHTML = `
     ${selectedWord
@@ -33,27 +32,27 @@ function displayWord(){
 
     const innerWord = wordE1.innerText.replace(/\n/g, '');
 
-    if(innerWord === selecteWord){
-        finalMessage.innerText = 'Congratulation! You won!';
+    if(innerWord === selectedWord){
+        finalMessage.innerText = 'Congratulations! You won! 😃';
         popup.style.display= 'flex';
-        incrementFound();
+        correctWords();
     }
 }
 
-// Update the word letters
-function updateWrongletterE1(){
-    //Dispaly wrong letters
+// Update the wrong letters
+function updateWrongLetterE1(){
+    //Display wrong letters
     wrongLettersE1.innerHTML = `
     ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `;
 
     //Display parts
-    fugureParts.forEach((part,index) => {
+    figureParts.forEach((part,index) => {
         const errors = wrongLetters.length;
 
         if(index < errors) {
-            part.style.display = 'block';
+            part.style.display = 'block'
         }
         else{
             part.style.display = 'none';
@@ -62,9 +61,9 @@ function updateWrongletterE1(){
 
     //Check if lost
     if(wrongLetters.length === figureParts.length){
-        finalMessage.innerHTML = 'Unfortunaley you lost.';
+        finalMessage.innerText = 'Unfortunately you lost. 😕';
         popup.style.display = 'flex';
-        incrementNotfound();
+        incorrectWords();
     }
 }
 
@@ -79,7 +78,7 @@ function showNotification(){
 
 //Keydown letter press
 window.addEventListener('keydown', e =>{
-    if(e.keyCode >= 65 && e.keyCode <= 90){
+    if(e.keyCode >= 65 && e.keyCode <=90){
         const letter = e.key;
 
         if(selectedWord.includes(letter)){
@@ -94,7 +93,7 @@ window.addEventListener('keydown', e =>{
             if(!wrongLetters.includes(letter)){
                 wrongLetters.push(letter);
 
-                updateWrongLettersE1();
+                updateWrongLetterE1();
             } else{
                 showNotification();
             }
@@ -102,36 +101,39 @@ window.addEventListener('keydown', e =>{
     }
 });
 
-// Gets the current score from the DOM and increments it
+function correctWords() {
 
-function incrementFound() {
-    letoldScore = parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText =++ oldScore;
+	// Gets the current score from the DOM and increments it
+
+	let oldScore1 = parseInt(document.getElementById("score").innerText);
+	document.getElementById("score").innerText = ++oldScore1;
+
 }
 
-//Gets the current tally of incorrect answers from the DOM and increments it
+function incorrectWords() {
 
-function incrementNotfound() {
-    letoldScore = parseInt(document.getElementById('incorrect').innerText);
-    document.getElementById('incorrect').innerText =++ oldScore; 
+	// Gets the current tally of incorrect answers from the DOM and increments it
+
+	let oldScore2 = parseInt(document.getElementById("incorrect").innerText);
+	document.getElementById("incorrect").innerText = ++oldScore2;
+
 }
-
 
 //Restart game and play again
-
 playAgainBtn.addEventListener('click', () => {
     //Empty arrays
     correctLetters.splice(0);
     wrongLetters.splice(0);
 
     selectedWord = words[Math.floor(Math.random() * words.length)];
-    
+
     displayWord();
 
-    updateWrongletterE1();
+    updateWrongLetterE1();
 
     popup.style.display = 'none';
 });
 
 displayWord();
+
 

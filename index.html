@@ -10,6 +10,13 @@
 <body>
     <h1>Hangman</h1>
     <p>Find the hidden word - Enter a letter</p>
+
+    <!-- Tracking score -->
+	<div class="score-area">
+		<p class="scores">Found words: <span id="score">0</span></p>
+		<p class="scores">Not found words: <span id="incorrect">0</span></p>
+	</div>
+    
     <div class="game-container">
         <svg height="250" width="200" class="figure-container">
             <!-- Rod -->
@@ -48,6 +55,7 @@
     <div class="notification-container" id="notification-container">
         <p>You have already entered this letter</p>
     </div>
+
 
     <script src="assets/JS/script.js"></script>
 </body>
