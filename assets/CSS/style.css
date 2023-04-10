@@ -16,7 +16,7 @@ body{
     overflow: hidden;
 }
 
-body h1{
+h1{
     margin: 20px 0 0;
 }
 
@@ -26,6 +26,17 @@ body h1{
     margin: 0;
     height: 350px;
     width: 400px;
+}
+
+.figure-container{
+    fill: transparent;
+    stroke:rgb(2, 22, 22);
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.figure-part{
+    display: none;
 }
 
 .score-area{
@@ -119,7 +130,7 @@ transform: scale(0.80);
 
 .notification-container p{
     margin: 0;
-    color: rgb(214, 206, 206);
+    color: rgb(199, 184, 184);
 }
 
 .notification-container.show{
