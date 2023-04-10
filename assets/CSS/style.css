@@ -1,11 +1,10 @@
 *{
-box-sizing: border-box;
-
+    box-sizing: border-box;
 }
 
 body{
-    background-color: rgb(0, 255, 234);
-    color: rgb(2, 22, 22);
+    background-color: #4f345a;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -23,26 +22,20 @@ h1{
 .game-container{
     padding: 20px 30px;
     position: relative;
-    margin: 0;
+    margin: auto;
     height: 350px;
-    width: 400px;
+    width: 450px;
 }
 
 .figure-container{
     fill: transparent;
-    stroke:rgb(2, 22, 22);
+    stroke: #fff;
     stroke-width: 4px;
     stroke-linecap: round;
 }
 
 .figure-part{
     display: none;
-}
-
-.score-area{
-    margin: 5px auto;
-    width: 60%;
-    font-size: 1.2rem;
 }
 
 .wrong-letters-container{
@@ -55,34 +48,34 @@ h1{
 }
 
 .wrong-letters-container p{
-    margin: 0 0 5px;   
+    margin: 0 0 5px;
 }
 
 .wrong-letters-container span{
-    font-size: 10px;
+    font-size: 24px;
 }
 
 .word{
     display: flex;
     position: absolute;
     bottom: 10px;
-    right: 50%;
-    transform: translateX(-50);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .letter{
-    border-bottom: 3px solid rgb(45, 102, 102);
-    display: inline;
+    border-bottom: 3px solid #2980b9;
+    display: inline-flex;
     font-size: 30px;
     align-items: center;
     justify-content: center;
-    margin: 10px 3px;
+    margin: 0 3px;
     height: 50px;
-    width: 30px;
+    width: 20px;
 }
 
 .popup-container{
-    background-color: rgb(236, 247, 247);
+    background-color: rgba(0,0,0,0.3);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -94,17 +87,17 @@ h1{
 }
 
 .popup{
-    background-color: rgb(80, 80, 109);
+    background-color: #2980b9;
     border-radius: 5px;
-    box-shadow: 0 15px 10px 3px rgb(32, 26, 26);
+    box-shadow: 0 15px 10px 3px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
 }
 
 .popup button{
     cursor: pointer;
-    background-color: rgb(214, 206, 206);
-    color: rgb(80, 80, 109);
+    background-color: #fff;
+    color: #2980b9;
     border: 0;
     margin-top: 20px;
     padding: 12px 20px;
@@ -112,7 +105,7 @@ h1{
 }
 
 .popup button:active{
-transform: scale(0.80);
+    transform: scale(0.98);
 }
 
 .popup button:focus{
@@ -120,17 +113,16 @@ transform: scale(0.80);
 }
 
 .notification-container{
-    background-color: rgb(2, 22, 22);
+    background-color: rgba(0,0,0,0.3);
     border-radius: 10px 10px 0 0;
     padding: 15px 20px;
-    position: fixed;
-    bottom: 30px;
-    transition: transform 0.4s ease-in-out;
+    position: absolute;
+    bottom: -50px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .notification-container p{
     margin: 0;
-    color: rgb(199, 184, 184);
 }
 
 .notification-container.show{
