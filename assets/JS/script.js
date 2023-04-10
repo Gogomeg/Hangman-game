@@ -47,6 +47,19 @@ function updateWrongletterE1(){
     ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `;
+
+    //Display parts
+    fugureParts.forEach((part,index) => {
+        const errors = wrongLetters.length;
+
+        if(index < errors) {
+            part.style.display = 'block';
+        }
+        else{
+            part.style.display = 'none';
+        }
+    });
+
     //Check if lost
     if(wrongLetters.length === figureParts.length){
         finalMessage.innerHTML = 'Unfortunaley you lost.';
@@ -89,5 +102,36 @@ window.addEventListener('keydown', e =>{
     }
 });
 
+// Gets the current score from the DOM and increments it
 
+function incrementFound() {
+    letoldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText =++ oldScore;
+}
+
+//Gets the current tally of incorrect answers from the DOM and increments it
+
+function incrementNotfound() {
+    letoldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText =++ oldScore; 
+}
+
+
+//Restart game and play again
+
+playAgainBtn.addEventListener('click', () => {
+    //Empty arrays
+    correctLetters.splice(0);
+    wrongLetters.splice(0);
+
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    
+    displayWord();
+
+    updateWrongletterE1();
+
+    popup.style.display = 'none';
+});
+
+displayWord();
 
