@@ -3,6 +3,7 @@ const wrongLettersE1 = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
+const notification2 = document.getElementById('notification2-container');
 const finalMessage = document.getElementById('final-message');
 const figureParts= document.querySelectorAll(".figure-part");
 const words = ['aberrant', 'assiduous', 'restaurateur', 'corroborate', 'curriculum', 'defamation', 'deprivation', 'dissociate', 'espionage', 'exaggeration', 'diurnal', 'distinction', 'programming', 'practical', 'software', 'development', 'modernism', 'situationist', 'syndrome', 'jawbreaker'];
@@ -67,7 +68,7 @@ function updateWrongLetterE1(){
     }
 }
 
-//Show notification
+//Show notification for hitting twice the same wrong letter
 function showNotification(){
     notification.classList.add('show');
 
@@ -76,7 +77,17 @@ function showNotification(){
     }, 2000);
 }
 
-//Keydown letter press
+//Show notification for hitting a character outside of letter
+
+function showNotification2() {
+    notification2.classList.add('show');
+
+    setTimeout(() => {
+        notification2.classList.remove('show');
+    }, 2000);
+}
+
+//Keydown letter press, from 65 to 90, the strokes indexes for all the letters of the alphabet 
 window.addEventListener('keydown', e =>{
     if(e.keyCode >= 65 && e.keyCode <=90){
         const letter = e.key;
@@ -97,9 +108,12 @@ window.addEventListener('keydown', e =>{
             } else{
                 showNotification();
             }
-        }
+        } 
+    } else{
+        showNotification2();
     }
-});
+}
+);
 
 function correctWords() {
 

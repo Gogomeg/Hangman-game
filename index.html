@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e900e296d0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Hangman</title>
 </head>
@@ -11,7 +12,7 @@
     <h1>Hangman
         <img class="logo" src="assets/images/hangman-game.png">
     </h1>
-    <p>Find the hidden word - Enter a letter</p>
+    <p>Find the hidden word</p>
 
     <!-- Tracking score -->
 	<div class="score-area">
@@ -42,6 +43,7 @@
         <div class="wrong-letters-container">
             <div id="wrong-letters"></div>
         </div>
+        <span><i class="fa-solid fa-keyboard"></i> Input letter <i class="fa-solid fa-arrow-down-a-z"></i></span>
         <div class="word" id="word"></div>
     </div>
 
@@ -53,11 +55,13 @@
         </div>
     </div>
 
-    <!-- Notification -->
+    <!-- Notifications -->
     <div class="notification-container" id="notification-container">
         <p>You have already entered this letter</p>
     </div>
-
+    <div class="notification2-container" id="notification2-container">
+        <p>You have entered a character that is not a letter</p>
+    </div>
 
     <script src="assets/JS/script.js"></script>
 </body>
