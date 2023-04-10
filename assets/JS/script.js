@@ -10,6 +10,7 @@ const words = ['aberrant', 'assiduous', 'restaurateur', 'corroborate', 'curricul
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
+const maxWrong = 6;
 const correctLetters = [];
 const wrongLetters = [];
 
@@ -105,6 +106,8 @@ window.addEventListener('keydown', e =>{
                 wrongLetters.push(letter);
 
                 updateWrongLetterE1();
+
+                countLives();
             } else{
                 showNotification();
             }
@@ -133,6 +136,13 @@ function incorrectWords() {
 
 }
 
+// Gets the number of remaining tries shown the maximum number being "6"
+
+function countLives() {
+    let oldScore3 = parseInt(document.getElementById("lives").innerText);
+	document.getElementById("lives").innerText = oldScore3 -= 1;
+} 
+
 //Restart game and play again
 playAgainBtn.addEventListener('click', () => {
     //Empty arrays
@@ -144,6 +154,8 @@ playAgainBtn.addEventListener('click', () => {
     displayWord();
 
     updateWrongLetterE1();
+
+    document.getElementById('lives').innerHTML = maxWrong;
 
     popup.style.display = 'none';
 });
