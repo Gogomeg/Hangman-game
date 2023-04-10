@@ -64,7 +64,7 @@ h1{
 }
 
 .letter{
-    border-bottom: 3px solid #0c4266;
+    border-bottom: 3px solid #854f8a;
     display: inline-flex;
     font-size: 30px;
     align-items: center;
@@ -122,6 +122,7 @@ h1{
 }
 
 .notification-container p{
+    color: rgb(53, 39, 180);
     margin: 0;
 }
 
