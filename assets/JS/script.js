@@ -1,3 +1,5 @@
+// The code has many snipets inspired from https://mega.nz/folder/mcFR2Yya#HLabokFeyZci7eqKQaQ1wg
+
 const wordE1 = document.getElementById('word');
 const wrongLettersE1 = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
