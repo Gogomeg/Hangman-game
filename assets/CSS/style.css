@@ -177,3 +177,38 @@ section{
     transform: translateY(-50px);
 }
 
+/* for larger to medium screen size from 1200px wide and down */
+
+@media screen and (max-width: 1200px){
+.wrong-letters-container{
+    position: absolute;
+    top: 40px;
+    display: flex;
+    text-align: center;
+    font-size: 80%;
+}
+
+.wrong-letters-container p{
+    margin: 0;
+}
+
+.wrong-letters-container span{
+    font-size: 80%;
+}
+#input{
+    margin-bottom: 80px;
+    font-size: 80%;
+}
+.figure-container{
+    float: left;
+    fill: transparent;
+    stroke: #302238;
+    stroke-width: 2px;
+    stroke-linecap: round;
+}
+
+svg{
+    height: 200px; 
+    width: 200px;
+}
+}
