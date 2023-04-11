@@ -16,9 +16,6 @@ const maxWrong = 6;
 const correctLetters = [];
 const wrongLetters = [];
 
-const foundWords = [];
-const notfoundWords = []
-
 //Show hidden word
 function displayWord(){
     wordE1.innerHTML = `
